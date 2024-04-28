@@ -12,6 +12,7 @@ import Signup from "../Pages/Signup";
 import Passenger from "../Pages/Passenger";
 import Driver from "../Pages/Driver";
 import UserStartService from "../Pages/UserStartService";
+import FindUser from "../Pages/FindUser";
 
 export const router = createBrowserRouter([
     {
@@ -67,6 +68,10 @@ export const router = createBrowserRouter([
        {
         path: 'terms&condition',
         element: <Terms/>
+       },
+       {
+        path: 'find-users',
+        element : <FindUser/>
        }
       ]
     },

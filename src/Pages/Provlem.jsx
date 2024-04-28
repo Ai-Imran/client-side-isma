@@ -10,7 +10,7 @@ const Problem = () => {
            <div className="lg:flex my-10 gap-8 lg:px-8">
                 <div className="lg:w-1/2">
                 <img className='hover:-rotate-6 mb-10 transition h-[200px] mx-auto delay-300 duration-300' src={provblem} alt="Problem Image" />
-                <p className='text-gray-300 px-4 text-justify text-[20px]'>
+                <p className='text-gray-300 px-4 text-justify lg:text-[20px]'>
                 প্রিয় গ্রাহক,<br />
                 আমরা অনেক আনন্দিত যে আপনি আমাদের একটি ভুল খুজে আমাদেরকে সাহায্য করবেন।আমরা সবাই একসাথেই এগিয়ে যেতে চাই।
                 যদি আপনি ইতিমধ্যে কোনো সমস্যায় পড়েছেন তাহলে আর অপেক্ষা না করে আপনার সমস্যার কথা বিস্তারিত ভাবে জানাতে পারেন। <br />
@@ -36,7 +36,7 @@ const Problem = () => {
                 </p>
                 </div>
                 <div className="lg:w-1/2 px-4">
-                    <div className=" my-16 mt-16 text-[20px] text-gray-300 pr-5 text-justify">
+                    <div className=" my-5 lg:my-16 lg:mt-16 lg:text-[20px] text-gray-300 pr-5 text-justify">
                         <p>
                         আপনার সমস্যাটি এখানে বিস্তারিত ভাবে লিখুন এখন দ্রুত সমাধান পেতে পারেন । 
                         <span className="text-yellow-400 mx-1">
@@ -48,11 +48,11 @@ const Problem = () => {
                         </p>
                     </div>
                    <div className="mx-auto text-center">
-                   <textarea name="" className='  text-white px-3 bg-gray-700  py-5 border-none outline-none rounded-md w-11/12 lg:h-[620px] lg:w-[600px]' placeholder='এখানে লিখুন .......' id="" cols="18" rows="10"></textarea>
+                   <textarea name="" className='  text-white px-3 bg-gray-700 py-2 lg:py-5 border-none outline-none rounded-md w-11/12 lg:h-[620px] lg:w-[600px]' placeholder='এখানে লিখুন .......' id="" cols="18" rows="10"></textarea>
                    </div>
                     
-                    <div className='bg-gradient-to-r from-purple-600 mt-2 via-red-600 text-center  to-yellow-300 lg:mx-0 mx-4 py-2 rounded-md font-semibold cursor-pointer '> 
-                    <input className=' mx-auto py-2 text-xl font-bold text-white cursor-pointer' type="submit" value="পাঠিয়ে দিন" />
+                    <div className='bg-purple-800 text-center  lg:mx-0 mx-4 py-2 rounded-md font-semibold cursor-pointer '> 
+                    <input className=' mx-auto py-1 lg:py-2 lg:text-xl font-bold text-white cursor-pointer' type="submit" value="পাঠিয়ে দিন" />
                     </div>
                   
                 </div>

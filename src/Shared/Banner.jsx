@@ -122,7 +122,7 @@ const Banner = () => {
             </div>
             <div className="mx-auto text-center">
                 <Link to={'/login'} className='md:w-3/12 '>
-                <button className="btn animate-gradient w-[300px] mt-4 md:w-3/12 bg-gradient-to-r from-green-700 via-yellow-400 to-red-500  animate-gradient text-white font-bold text-xl">একাউন্ট খুলুন</button>
+                <button className="  w-[346px] rounded py-1 mt-4 md:w-3/12 bg-purple-800 text-white font-bold text-xl">একাউন্ট খুলুন</button>
                 </Link>
             </div>
         </div>

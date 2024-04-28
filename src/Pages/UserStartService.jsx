@@ -137,12 +137,12 @@ const UserStartService = () => {
                         {errorMessage && <span className="text-red-500">{errorMessage}</span>}
                  </div>
 
-                <div className="bg-white lg:text-xl text-black px-4 rounded py-4">
+                <div className="bg-white  lg:text-xl text-black px-4 rounded py-4">
                     <h3 className="mx-auto  text-center">আপনার হিসাব-নিকাশ</h3>
                     <div className="flex  justify-between">
                         <p className=" ">
                             একজন যাত্রীর ভাড়া
-                        </p> <span>{publicPrice} টাকা</span>
+                        </p> <span >{publicPrice} টাকা</span>
                     </div>
                     
                     <div className="flex justify-between">
@@ -155,7 +155,7 @@ const UserStartService = () => {
                         <p>অন্যান্য খরচ</p> <span> {othersCost} টাকা</span>
                     </div>
                     <div className="flex justify-between">
-                        <p>সর্বমোট খরচ</p> <span> {totalCost} টাকা</span>
+                        <p>সর্বমোট খরচ</p> <span className="font-bold"> {totalCost} টাকা</span>
                     </div>
                 </div>
 

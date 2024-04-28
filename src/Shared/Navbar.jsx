@@ -1,13 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import './style.css'
 import { AiFillHome } from "react-icons/ai";
-import { FaFacebookMessenger } from "react-icons/fa";
+import { FaFacebookMessenger, FaSearch } from "react-icons/fa";
 import { FaCarSide } from "react-icons/fa";
-import { BsSendFill } from "react-icons/bs";
 import { FaUser } from "react-icons/fa6";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
-import RandomColorText from "./RandomColorText";
+// import RandomColorText from "./RandomColorText";
 
 const Navbar = () => {
 
@@ -92,11 +91,11 @@ const Navbar = () => {
 
             <div className="grid  justify-items-center text-white grid-cols-5 lg:hidden text-3xl mt-1">
                 <NavLink to={'/'} ink="true"><AiFillHome className=" transition delay-100" /></NavLink>
-                <NavLink  to={'/contact'}><FaFacebookMessenger className=" transition delay-100"/></NavLink>
+                <NavLink  to={'/contact'}><FaSearch className=" transition delay-100"/></NavLink>
                {
                 user ?  <NavLink to={'/user-start'}><FaCarSide className=" transition delay-100" /></NavLink> :  <NavLink to={'/startSerives'}><FaCarSide className=" transition delay-100" /></NavLink>
                }
-                <NavLink to={'/problem'}><BsSendFill className=" transition delay-100"/></NavLink>
+                <NavLink to={'/problem'}><FaFacebookMessenger className=" transition delay-100"/></NavLink>
                 <label htmlFor="my-drawer-4" className="drawer-button text-white text-3xl ">  <FaUser className="transition delay-100 hover:text-purple-600"/></label>
       
                 

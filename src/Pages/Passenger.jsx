@@ -54,7 +54,7 @@ const Passenger = () => {
       
       const imageData = await response.json();
       const newPassenger = {
-        name,phoneNumber,email,gender,age, photoUrl: imageData.data.url
+        name,phoneNumber,role:"passenger",email,gender,age, photoUrl: imageData.data.url  
       }
 
 

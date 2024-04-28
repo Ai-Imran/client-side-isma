@@ -38,7 +38,7 @@ const Driver = () => {
     // Create user and update profile
     try {
       // Create user
-      const user = await createUser(email, password);
+       await createUser(email, password);
      
 
       // Upload image to ImgBB
@@ -54,7 +54,7 @@ const Driver = () => {
 
       // Update user profile with image URL
       const newDriver = {
-        name, phoneNumber, email, address, gender, vehicleType, drivingExperience,
+        name, phoneNumber,role:"Dirver", email, address, gender, vehicleType, drivingExperience,
         monthlyEarnings, experience, vehicleOwnership, hasLicense, photoUrl: imageData.data.url
       };
   
