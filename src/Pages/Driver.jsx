@@ -23,11 +23,12 @@ const Driver = () => {
     const formData = new FormData(event.target);
 
     const name = formData.get('name');
+    const year = formData.get('year');
   const phoneNumber = formData.get('number');
   const email = formData.get('email');
   const address = formData.get('address');
   const gender = formData.get('gender');
-  const vehicleType = formData.get('vehicleType');
+  const vehicleType = formData.get('car-name');
   const drivingExperience = formData.get('drivingday');
   const monthlyEarnings = formData.get('earnings');
   const experience = formData.get('exprience');
@@ -54,7 +55,7 @@ const Driver = () => {
 
       // Update user profile with image URL
       const newDriver = {
-        name, phoneNumber,role:"Dirver", email, address, gender, vehicleType, drivingExperience,
+        name, phoneNumber,role:"Dirver", email, address, gender, vehicleType, drivingExperience,year,
         monthlyEarnings, experience, vehicleOwnership, hasLicense, photoUrl: imageData.data.url
       };
   
@@ -138,8 +139,8 @@ const Driver = () => {
                 </div>
                 <div className="my-2">  
 
-                <label className="font-bold" htmlFor="gender">আপনার যানবাহন / গাড়ির নাম</label>              
-                <select className="bg-gray-700  rounded-md text-white focus:border-lime-500 focus:border focus:shadow-lg outline-none px-10 py-2 block " id="gender" name="gender">
+                <label className="font-bold" htmlFor="car-name">আপনার যানবাহন / গাড়ির নাম</label>              
+                <select className="bg-gray-700  rounded-md text-white focus:border-lime-500 focus:border focus:shadow-lg outline-none px-10 py-2 block " id="car-name" name="car-name">
                 <option value="অটো গাড়ি">অটো গাড়ি</option>
                 <option value="রিক্সা">রিক্সা</option>
                 <option value="সিএনজি">সিএনজি</option>

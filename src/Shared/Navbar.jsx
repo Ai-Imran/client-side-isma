@@ -27,7 +27,7 @@ const Navbar = () => {
                        <div className=" ml-[165px]">
                        {
                             user && <>
-                             <img className="text-white w-[60px] h-[60px] border shadow-2xl border-purple-400 rounded" src={user?.photoURL} alt="user Photo" />
+                             <img className="text-white w-[60px] h-[60px] border shadow-2xl border-purple-400 rounded" src={user?.photoURL} alt="Photo" />
                             </>
                         }
                        </div>
@@ -41,7 +41,7 @@ const Navbar = () => {
                         <div className="text-white">
                        {
                         user && <>
-                         <img className="text-white rounded-sm  mx-auto" src={user?.photoURL} alt="user photo" />
+                         <img className="text-white rounded-sm  mx-auto" src={user?.photoURL} alt="photo" />
                          <p className="text-lime-400">{user?.displayName}</p>
                         </>
                        }
@@ -82,7 +82,7 @@ const Navbar = () => {
                         user ? <span onClick={handleLogout} className="text-yellow-500">Logout</span> :  <NavLink to={'/login'}>লগইন করুন</NavLink>
                        }
                         {
-                            user && <img className="text-white w-[60px] h-[60px] -mt-5 rounded-full" src={user?.photoURL} alt="user Photo" />
+                            user && <img className="text-white w-[60px] h-[60px] -mt-5 rounded-full" src={user?.photoURL} alt="Photo" />
                         }
                        </ul>
                 </div>
