@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from '../Providers/AuthProviders';
+import { useNavigate } from "react-router-dom";
 
 const UserStartService = () => {
     const {user} = useContext(AuthContext)
@@ -12,6 +13,7 @@ const UserStartService = () => {
     const [totalCost, setTotalCost] = useState(5);
     const [errorMessage, setErrorMessage] = useState("");
     const [nullError, setNullError] = useState("আপনার যায়গা সিলেক্ট করুন");
+    const navigate = useNavigate();
 
     const handlePlaceChange = (e) => {
         const selectedValue = e.target.value;
@@ -62,20 +64,55 @@ const UserStartService = () => {
         setTotalCost((publicPrice + taxPrice) * totalPassenger);
       }, [publicPrice, totalPassenger, taxPrice]);
     
-    const handleSubmit = (e) => {
-        e.preventDefault()
-    }
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        // Gather form data
+        const formData = new FormData(e.target);
+        const formDataObject = {};
+        formData.forEach((value, key) => {
+            formDataObject[key] = value;
+        });
+    
+        // Add additional data
+        formDataObject['publicPrice'] = publicPrice;
+        formDataObject['totalCost'] = totalCost;
+    
+        // Fetch options
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formDataObject),
+        };
+    
+        try {
+            // Sending POST request
+            const response = await fetch('http://localhost:5000/users-orders', options);
+            if (!response.ok) {
+                throw new Error('Network response was not ok.');
+            }
+    
+            // Handle successful response
+            console.log('Order placed successfully!');
+            navigate('/order-success'); // Redirect to home or any other page
+        } catch (error) {
+            console.error('There was a problem with your fetch operation:', error);
+            // Handle errors here
+        }
+    };
+    
+    
     // console.log(totalCost);
 
     return (
         <div className="text-white px-3 min-h-screen">
             <div className="lg:mx-auto mt-8 text-center">
                 <p className="text-yellow-300 lg:text-xl ">
-                    গাড়ির জন্য ঘন্টার পর ঘন্টা বসে না থেকে এখনই গাড়ি অর্ডার দিন।আর খুব সহজে পৌঁছে যান আপনার গন্তব্যে
+                    গাড়ির জন্য ঘন্টার পর ঘন্টা বসে না থেকে এখনই গাড়ি অর্ডার দিন।আর খুব সহজে পৌঁছে যান আপনার গন্তব্যে !!!
                 </p>
-                <p className="lg:w-3/4 mx-auto lg:text-xl ">
-                    তাই আর দেরি কিসের পছন্দ অনুযায়ী গাড়ি সিলেক্ট করে, সবগুলো তথ্য দিয়ে শুধু একবার যোগাযোগ করুন। আমরা আপনার সুবিধা অনুযায়ী যেকোনো সার্ভিস দিতে এগিয়ে যাবো সবসময়
-                </p>
+              
             </div>
             <form onSubmit={handleSubmit} className="lg:w-1/2 text-[14px] lg:text-[16px]  mx-auto my-8">
                 <div className="my-2">

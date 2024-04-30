@@ -1,8 +1,46 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import provblem from '../assets/prob1.png'
-
+import { useContext } from 'react';
+import { AuthContext } from '../Providers/AuthProviders';
 
 const Problem = () => {
+    const {user} = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const phoneNumber = e.target.number.value;
+        const email = e.target.email.value;
+        const message = e.target.message.value;
+
+        const formData = {
+            name,
+            phoneNumber,
+            email,
+            message
+        };
+
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        };
+
+        try {
+            const response = await fetch('http://localhost:5000/users-problems', options);
+            if (!response.ok) {
+                throw new Error('Network response was not ok.');
+                
+            }
+            navigate('/problem-success');
+            console.log('Problem submitted successfully!');
+        } catch (error) {
+            console.error('There was a problem with your fetch operation:', error);
+        }
+    };
     return (
         <div className=" min-h-screen pb-1">
             <div className="">
@@ -47,13 +85,38 @@ const Problem = () => {
                          </span> বুঝতে পারে না ।
                         </p>
                     </div>
-                   <div className="mx-auto text-center">
-                   <textarea name="" className='  text-white px-3 bg-gray-700 py-2 lg:py-5 border-none outline-none rounded-md w-11/12 lg:h-[620px] lg:w-[600px]' placeholder='এখানে লিখুন .......' id="" cols="18" rows="10"></textarea>
+                  <form className='text-white ' onSubmit={handleSubmit}>
+                  <div className="my-2 ml-4">
+                <label className="" htmlFor="name">আপনার নাম লিখুন</label>
+                <input defaultValue={user?.displayName} required className="bg-gray-700 w-11/12 rounded-md text-white focus:border-lime-500 focus:border focus:shadow-lg outline-none px-3 py-2 block " type="text" name="name" placeholder="এখানে আপনার নাম লিখুন" />
+                 </div>
+                 <div className="my-2 ml-4">                  
+             <label className="" htmlFor="number">
+             মোবাইল নাম্বারটি লিখুন
+             </label>
+             <input
+               required
+               className="bg-gray-700 w-11/12 rounded-md text-white focus:border-lime-500 focus:border focus:shadow-lg outline-none px-3 py-2 block"
+               type="number" // Use type="tel" for phone number input
+               name="number"
+              
+               placeholder="এখানে আপনার মোবাইল নাম্বার লিখুন"
+             />
+      </div>
+    
+               <div className="my-2 ml-4">
+               <label className=" " htmlFor="email">আপনার একটি ইমেইল দিন [Optional]</label>
+                <input defaultValue={user?.email} className="bg-gray-700 w-11/12 rounded-md text-white focus:border-lime-500 focus:border focus:shadow-lg outline-none px-3 py-2 block " type="email" name="email" placeholder="এখানে আপনার ইমেইল লিখুন" />
+               
+               </div>
+                  <div className="mx-auto text-center">
+                   <textarea name="message" className='  text-white px-3 bg-gray-700 py-2 lg:py-5 border-none outline-none rounded-md w-11/12 lg:h-[620px] lg:w-[600px]' placeholder='এখানে লিখুন .......' id="" cols="18" rows="10"></textarea>
                    </div>
                     
                     <div className='bg-purple-800 text-center  lg:mx-0 mx-4 py-2 rounded-md font-semibold cursor-pointer '> 
-                    <input className=' mx-auto py-1 lg:py-2 lg:text-xl font-bold text-white cursor-pointer' type="submit" value="পাঠিয়ে দিন" />
+                    <input className=' mx-auto lg:py-2 lg:text-xl font-bold text-white cursor-pointer' type="submit" value="পাঠিয়ে দিন" />
                     </div>
+                  </form>
                   
                 </div>
            </div>
@@ -61,3 +124,6 @@ const Problem = () => {
     )
 }
 export default Problem;
+
+
+

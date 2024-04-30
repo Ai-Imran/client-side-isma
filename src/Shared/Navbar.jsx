@@ -64,7 +64,7 @@ const Navbar = () => {
                 </div>
                 {/* <div className="border p-2 border-dashed ml-3 text-shadow rounded-full border:animate-spin"> <RandomColorText className="bg-green-500 " text={'0'}/> </div> */}
 
-                    <Link to={'/'} className=" ml-3 rounded font-serif text-stone-300 px-1 text-shadow hover:text-lime-300 shad text-3xl" >Ismaqw</Link>
+                    <Link to={'/'} className=" ml-3 rounded font-serif  px-1 text-shadow text-lime-300 shad text-3xl" >Ismaqw</Link>
                 </div>
                 <div className="navbar-center  hidden lg:flex">
                     <ul className="menu space-x-4 text-[18px]  ml-10 font-bold menu-horizontal px-1">

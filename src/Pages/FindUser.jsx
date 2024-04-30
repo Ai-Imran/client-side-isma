@@ -12,15 +12,7 @@ const FindUser = () => {
     useEffect(() => {
         fetchUsers();
     }, []);
-    const [isImageClicked, setIsImageClicked] = useState(false);
-
-    const handleImageClick = () => {
-        setIsImageClicked(true);
-    };
-
-    const handleCloseFullScreenImage = () => {
-        setIsImageClicked(false);
-    };
+   
 
     const fetchUsers = async () => {
         try {
@@ -93,28 +85,9 @@ const handleKeyPress = (event) => {
                 className="w-[60px] h-[60px] lg:w-[120px] lg:h-[120px] border shadow-2xl border-lime-500 rounded cursor-pointer"
                 src={user?.photoUrl}
                 alt="image"
-                onClick={handleImageClick}
+               
             />
 
-            {/* Full-screen image overlay */}
-            {isImageClicked && (
-                <div className="fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-black bg-opacity-75">
-                    <div className="relative max-w-screen-md w-full h-full">
-                        <img
-                            className="absolute top-16 left-0 w-[450px] h-[300px] object-contain cursor-pointer"
-                            src={user?.photoUrl}
-                            alt="image"
-                            onClick={handleCloseFullScreenImage}
-                        />
-                        <button
-                            className="absolute top-0 right-0 m-5 p-2 text-white bg-gray-700 rounded--lg hover:bg-gray-800 focus:outline-none"
-                            onClick={handleCloseFullScreenImage}
-                        >
-                           <IoClose />
-                        </button>
-                    </div>
-                </div>
-            )}
                             <span>{user?.name}</span>
                             <span>{user?.role}</span>
                             <Link className="text-3xl lg:text-5xl text-lime-400 "><BiSolidUserDetail /></Link>

@@ -13,6 +13,8 @@ import Passenger from "../Pages/Passenger";
 import Driver from "../Pages/Driver";
 import UserStartService from "../Pages/UserStartService";
 import FindUser from "../Pages/FindUser";
+import OrderCar from "../Pages/OrderCar";
+import ProblemMessage from "../Pages/ProblemMessage";
 
 export const router = createBrowserRouter([
     {
@@ -72,6 +74,14 @@ export const router = createBrowserRouter([
        {
         path: 'find-users',
         element : <FindUser/>
+       },
+       {
+        path: 'order-success',
+        element : <OrderCar/>
+       },
+       {
+        path: 'problem-success',
+        element: <ProblemMessage/>
        }
       ]
     },
