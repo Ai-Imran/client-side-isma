@@ -15,6 +15,7 @@ import UserStartService from "../Pages/UserStartService";
 import FindUser from "../Pages/FindUser";
 import OrderCar from "../Pages/OrderCar";
 import ProblemMessage from "../Pages/ProblemMessage";
+import Posts from "../Pages/Posts";
 
 export const router = createBrowserRouter([
     {
@@ -82,6 +83,10 @@ export const router = createBrowserRouter([
        {
         path: 'problem-success',
         element: <ProblemMessage/>
+       },
+       {
+        path: 'posts',
+        element: <Posts/>
        }
       ]
     },

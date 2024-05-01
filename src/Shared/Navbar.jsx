@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import './style.css'
 import { AiFillHome } from "react-icons/ai";
-import { FaFacebookMessenger, FaSearch } from "react-icons/fa";
+import { FaAddressCard, FaFacebookMessenger, FaSearch } from "react-icons/fa";
 import { FaCarSide } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
 import { useContext } from "react";
@@ -50,7 +50,7 @@ const Navbar = () => {
                         {
                             user ? <NavLink to={'/user-start'}>শুরু করুন</NavLink> : <NavLink to={'/startSerives'}>সার্ভিস দেখুন</NavLink>
                         }
-                       
+                        <NavLink to={'/posts'}>পোস্ট</NavLink>
                        <NavLink to={'/contact'}>যোগাযােগ</NavLink>
                        <NavLink to={'/problem'}>আপনার সমস্যা</NavLink>
                        <NavLink to={'/help'}>আমাদের সহায়তা</NavLink>
@@ -74,6 +74,7 @@ const Navbar = () => {
                        }
                        
                        <NavLink to={'/contact'}>যোগাযােগ</NavLink>
+                       <NavLink to={'/posts'}>পোস্ট</NavLink>
                        <NavLink to={'/problem'}>আপনার সমস্যা</NavLink>
                        <NavLink to={'/help'}>আমাদের সহায়তা</NavLink>
                        <NavLink to={'/ourSelf'}>আমাদের সর্ম্পকে</NavLink>
@@ -89,9 +90,10 @@ const Navbar = () => {
                
             </div>
 
-            <div className="grid  justify-items-center text-white grid-cols-5 lg:hidden text-3xl mt-1">
+            <div className="grid  justify-items-center text-white grid-cols-6 lg:hidden text-3xl">
                 <NavLink to={'/'} ink="true"><AiFillHome className=" transition delay-100" /></NavLink>
                 <NavLink  to={'/contact'}><FaSearch className=" transition delay-100"/></NavLink>
+                <NavLink to={'/posts'} className=" transition delay-100"><FaAddressCard /></NavLink>
                {
                 user ?  <NavLink to={'/user-start'}><FaCarSide className=" transition delay-100" /></NavLink> :  <NavLink to={'/startSerives'}><FaCarSide className=" transition delay-100" /></NavLink>
                }

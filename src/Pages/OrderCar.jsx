@@ -62,7 +62,7 @@ const OrderCar = () => {
 
                         <FaWhatsapp className="  " />
                         <a target="_blank" href="https://www.facebook.com/imran.chowdhury.90663894"> <FaFacebook className="" /></a>
-                        <img className="w-10" src={imo} alt="" />
+                        <img className="w-10" src={imo} alt="imo" />
                     </div>
                 </div>
             </div>

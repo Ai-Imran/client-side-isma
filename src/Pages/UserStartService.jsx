@@ -30,9 +30,9 @@ const UserStartService = () => {
             setPublicPrice(15);
             setTotalCost(15 + taxPrice);
             setNullError("");
-        } else if (selectedValue === "homna to batakandi") {
-            setPublicPrice(25);
-            setTotalCost(25 + taxPrice);
+        } else if (selectedValue === "goaribhanga to homna") {
+            setPublicPrice(15);
+            setTotalCost(15 + taxPrice);
             setNullError("");
         } else {
             setNullError("");
@@ -131,10 +131,10 @@ const UserStartService = () => {
                     <label className="font-bold" htmlFor="targetplace">আপনি কোথায় থেকে কোথায় যেতে চান</label>
                     <select required onChange={handlePlaceChange} className="bg-gray-700  rounded-md text-white focus:border-lime-500 focus:border focus:shadow-lg outline-none px-10 py-2 block " id="targetplace" name="targetplace">
 
-                        <option value="null">এখানে ক্লিক করুন </option>
+                        <option value="">এখানে ক্লিক করুন </option>
 
+                        <option value="goaribhanga to homna">গোয়ারিভাংঙ্গা থেকে হোমনা</option>
                         <option value="homna to goaribhanga">হোমনা থেকে গোয়ারিভাংঙ্গা </option>
-                        <option value="homna to batakandi">হোমনা থেকে বাতাকান্দি</option>
                     </select>
                     {nullError && <span className="text-red-500">{nullError}</span>}
                 </div>

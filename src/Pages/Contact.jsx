@@ -29,7 +29,7 @@ const Contact = () => {
                                 <img className='w-10 h-10 hover:bg-lime-500 hover:rotate-45 transition delay-300 duration-300 ' src={imo} alt="" />
                             </div>
                             <p className="font-semibold hover:text-lime-500 text-xl">
-                                01906951915 <br /> 01814189243
+                                01906951915 <br /> 01605969098
                             </p>
                         </div>
                         <div className="divider divider-secondary my-8"> অথবা </div>
