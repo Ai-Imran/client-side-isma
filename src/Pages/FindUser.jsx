@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { BiSolidUserDetail } from "react-icons/bi";
 import { FaSearch } from "react-icons/fa";
-import { IoClose } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const FindUser = () => {
     const [users, setUsers] = useState([]);
@@ -12,7 +11,7 @@ const FindUser = () => {
     useEffect(() => {
         fetchUsers();
     }, []);
-   
+
 
     const fetchUsers = async () => {
         try {
@@ -40,16 +39,16 @@ const FindUser = () => {
         }
     };
 
- 
-const handleSearch = () => {
-    fetchFilteredUsers();
-};
 
-const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+    const handleSearch = () => {
         fetchFilteredUsers();
-    }
-};
+    };
+
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            fetchFilteredUsers();
+        }
+    };
 
     const fetchFilteredUsers = () => {
         const filteredUsers = users.filter(user =>
@@ -57,7 +56,7 @@ const handleKeyPress = (event) => {
         );
         if (filteredUsers.length === 0) {
             // Show error message if no users found
-          
+
         }
         setDisplayedUsers(filteredUsers);
     };
@@ -73,24 +72,27 @@ const handleKeyPress = (event) => {
                     onChange={handleSearchChange}
                     onKeyPress={handleKeyPress}
                 />
-               <div  onClick={handleSearch} onKeyPress={handleKeyPress} className="  bg-black p-2 px-4 " >
-               <FaSearch />
-               </div>
+                <div onClick={handleSearch} onKeyPress={handleKeyPress} className="  bg-black p-2 px-4 " >
+                    <FaSearch />
+                </div>
             </div>
             <div className="mt-2 lg:w-1/2 lg:text-xl mx-auto">
                 {displayedUsers.length > 0 ? (
                     displayedUsers.map(user => (
                         <div key={user._id} className="flex lg:gap-8 lg:my-2 py-1 items-center gap-3">
                             <img
-                className="w-[60px] h-[60px] lg:w-[120px] lg:h-[120px] border shadow-2xl border-lime-500 rounded cursor-pointer"
-                src={user?.photoUrl}
-                alt="image"
-               
-            />
+                                className="w-[60px] h-[60px] lg:w-[120px] lg:h-[120px] border shadow-2xl border-lime-500 rounded cursor-pointer"
+                                src={user?.photoUrl}
+                                alt="image"
+
+                            />
 
                             <span>{user?.name}</span>
-                            <span>{user?.role}</span>
-                            <Link className="text-3xl lg:text-5xl text-lime-400 "><BiSolidUserDetail /></Link>
+
+                            <p>{user.role}</p>
+                            <div onClick={() => Swal.fire(`তথ্য সিকিউরিটির জন্য তার সম্পর্কে গোপন রাখা হয়েছে যদি বিস্তারিত জানতে চান আমাদের সাথে যোগাযোগ করুন`)} className="text-3xl lg:text-5xl text-lime-400">
+                                <BiSolidUserDetail />
+                            </div>
                         </div>
                     ))
                 ) : (
