@@ -31,8 +31,8 @@ const UserStartService = () => {
             setTotalCost(15 + taxPrice);
             setNullError("");
         } else if (selectedValue === "goaribhanga to homna") {
-            setPublicPrice(15);
-            setTotalCost(15 + taxPrice);
+            setPublicPrice(25);
+            setTotalCost(25 + taxPrice);
             setNullError("");
         } else {
             setNullError("");
