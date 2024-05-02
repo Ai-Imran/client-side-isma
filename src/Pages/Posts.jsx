@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
 import { Link } from "react-router-dom";
 
@@ -28,6 +28,11 @@ const Posts = () => {
 
   const userName = user?.displayName;
   const userPhoto = user?.photoURL;
+
+  useEffect(() => {
+    fetchPosts();
+  }, []); // Fetch posts only once when the component mounts
+
   const fetchPosts = async () => {
     setIsLoading(true);
     try {
@@ -36,6 +41,8 @@ const Posts = () => {
         throw new Error("Failed to fetch posts");
       }
       const data = await response.json();
+      // Sort posts based on postDate from new to old
+      data.sort((a, b) => new Date(b.postDate) - new Date(a.postDate));
       setPosts(data);
     } catch (error) {
       setError(error);
@@ -53,7 +60,8 @@ const Posts = () => {
     const postDate = new Date().toISOString();
     
     try {
-      await createPost({userName,userPhoto, content, postDate });
+      await createPost({ userName, userPhoto, content, postDate });
+      // After successful post, fetch posts again to update the list
       await fetchPosts();
       e.target.reset(); // Reset the form after successful submission
     } catch (error) {
@@ -65,20 +73,20 @@ const Posts = () => {
 
   return (
     <div className="text-gray-200 min-h-screen">
-      <div className="w-11/12 mx-auto mt-2">
+      <div className="w-11/12 lg:w-1/2 mx-auto mt-2">
         {user ? (
           <>
-            <form onSubmit={handleSubmit} className="">
+            <form onSubmit={handleSubmit} className="mx-auto w-full">
               <textarea
                 required
-                className="text-black focus:border focus:border-lime-500 py-1 outline-none rounded px-2"
+                className="text-black w-11/12 focus:border focus:border-lime-500 py-1 outline-none rounded px-2"
                 name="content"
                 cols="40"
                 placeholder="এখানে লিখুন....."
                 rows="2"
               ></textarea>
               <input
-                className="bg-purple-700 w-full py-1 font-bold text-gray-300 rounded"
+                className="bg-purple-700 w-11/12 py-1 font-bold text-gray-300 rounded"
                 type="submit"
                 value="Post"
                 disabled={isLoading}
@@ -90,11 +98,15 @@ const Posts = () => {
               <p>Error: {error}</p>
             ) : (
               posts.map((post) => (
-                <div key={post._id}>
-                  <p>{post.content}</p>
-                  <p>{post.postDate}</p>
-                 
-                  {/* You can display user's photoUrl and displayName here */}
+                <div className="mt-2" key={post._id}>
+                <div className="border p-1 border-gray-700 rounded">
+                <div className="flex items-center gap-3">
+                  <img className="w-[70px] h-[70px] rounded-full" src={post.userPhoto} alt="image" />
+                 <h2>{post.userName}</h2>
+                  <p className="text-[12px] text-gray-400">{new Date(post.postDate).toLocaleString('en-US')}</p>
+                 </div>
+                  <p className="text-[13px] text-justify  mt-1 mx-1 text-gray-300">{post.content}</p>
+                </div>
                 </div>
               ))
             )}
