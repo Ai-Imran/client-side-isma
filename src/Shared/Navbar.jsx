@@ -24,12 +24,14 @@ const Navbar = () => {
                      <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
                      <div className="drawer-content">
                        {/* Page content here */}
-                       <div className=" ml-[165px]">
-                       {
+                       <div  className=" ml-[165px]">
+                      <Link to={'/posts'}>
+                      {
                             user && <>
                              <img className="text-white w-[60px] h-[60px] border shadow-2xl border-purple-400 rounded" src={user?.photoURL} alt="Photo" />
                             </>
                         }
+                      </Link>
                        </div>
 
                      </div> 
@@ -82,9 +84,11 @@ const Navbar = () => {
                        {
                         user ? <span onClick={handleLogout} className="text-yellow-500">Logout</span> :  <NavLink to={'/login'}>লগইন করুন</NavLink>
                        }
+                        <Link to={'/posts'}>
                         {
                             user && <img className="text-white w-[60px] h-[60px] -mt-5 rounded-full" src={user?.photoURL} alt="Photo" />
                         }
+                        </Link>
                        </ul>
                 </div>
                

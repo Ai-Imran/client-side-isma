@@ -26,7 +26,7 @@ const UserStartService = () => {
             setTotalPassenger(0); // Reset the total passenger count
             setErrorMessage(""); // Reset the error message
             return;
-        } else if (selectedValue === "homna to goaribhanga") {
+        } else if (selectedValue === "homna to batakandi") {
             setPublicPrice(15);
             setTotalCost(15 + taxPrice);
             setNullError("");
@@ -134,7 +134,7 @@ const UserStartService = () => {
                         <option value="">এখানে ক্লিক করুন </option>
 
                         <option value="goaribhanga to homna">গোয়ারিভাংঙ্গা থেকে হোমনা</option>
-                        <option value="homna to goaribhanga">হোমনা থেকে গোয়ারিভাংঙ্গা </option>
+                        <option value="homna to batakandi">হোমনা থেকে বাতাকান্দি </option>
                     </select>
                     {nullError && <span className="text-red-500">{nullError}</span>}
                 </div>

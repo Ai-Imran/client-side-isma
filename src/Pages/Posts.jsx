@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import  { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
 import { Link } from "react-router-dom";
 
@@ -25,6 +25,8 @@ const Posts = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [posts, setPosts] = useState([]);
+  const [expandedPosts, setExpandedPosts] = useState([]);
+
 
   const userName = user?.displayName;
   const userPhoto = user?.photoURL;
@@ -51,16 +53,60 @@ const Posts = () => {
     }
   };
 
+  const truncateContent = (content) => {
+    const words = content.split(" ");
+    if (words.length > 15) {
+      return words.slice(0, 15).join(" ") + "...";
+    } else {
+      return content;
+    }
+  };
+
+  const handleSeeMore = (postId) => {
+    // Implement functionality to expand content
+    // For example, toggle a state that controls whether to show full content
+    setExpandedPosts((prevExpandedPosts) =>
+    prevExpandedPosts.includes(postId)
+      ? prevExpandedPosts.filter((id) => id !== postId)
+      : [...prevExpandedPosts, postId]
+  );
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setError(null);
     const formData = new FormData(e.target);
     const content = formData.get("content");
+    const photoFile = formData.get("photofile");
     const postDate = new Date().toISOString();
-    
+
     try {
-      await createPost({ userName, userPhoto, content, postDate });
+      // Upload image to ImgBB
+      const imgFormData = new FormData();
+      imgFormData.append("image", photoFile);
+      const imgResponse = await fetch(
+        "https://api.imgbb.com/1/upload?key=b252a8cff14f36fc278309500d7be83f",
+        {
+          method: "POST",
+          body: imgFormData,
+        }
+      );
+      const imageData = await imgResponse.json();
+
+      const photoUrl = imageData.data.url;
+
+      // Create post data
+      const postData = {
+        userName,
+        userPhoto,
+        content,
+        postDate,
+        photoUrl,
+      };
+
+      await createPost(postData);
+
       // After successful post, fetch posts again to update the list
       await fetchPosts();
       e.target.reset(); // Reset the form after successful submission
@@ -86,6 +132,11 @@ const Posts = () => {
                 rows="2"
               ></textarea>
               <input
+                type="file"
+                className="my-1 bg-gray-600 w-11/12 text-lime-400 rounded"
+                name="photofile"
+              />
+              <input
                 className="bg-purple-700 w-11/12 py-1 font-bold text-gray-300 rounded"
                 type="submit"
                 value="Post"
@@ -93,20 +144,43 @@ const Posts = () => {
               />
             </form>
             {isLoading ? (
-              <p>Loading...</p>
+              <span className="loading loading-dots text-white mt-4 loading-lg"></span>
             ) : error ? (
               <p>Error: {error}</p>
             ) : (
               posts.map((post) => (
                 <div className="mt-2" key={post._id}>
-                <div className="border p-1 border-gray-700 rounded">
-                <div className="flex items-center gap-3">
-                  <img className="w-[70px] h-[70px] rounded-full" src={post.userPhoto} alt="image" />
-                 <h2>{post.userName}</h2>
-                  <p className="text-[12px] text-gray-400">{new Date(post.postDate).toLocaleString('en-US')}</p>
-                 </div>
-                  <p className="text-[13px] text-justify  mt-1 mx-1 text-gray-300">{post.content}</p>
-                </div>
+                  <div className="border p-1 border-gray-700 rounded">
+                    <div className="flex items-center gap-3">
+                      <img
+                        className="w-[70px] h-[70px] rounded-full"
+                        src={post.userPhoto}
+                        alt="image"
+                      />
+                      <h2>{post.userName}</h2>
+                      <p className="text-[12px] text-gray-400">
+                        {new Date(post.postDate).toLocaleString("en-US")}
+                      </p>
+                    </div>
+                    <p className="text-[13px] text-justify  mt-1 mx-1 text-gray-300">
+                {expandedPosts.includes(post._id) ? post.content : truncateContent(post.content)}
+                {post.content.split(" ").length > 15 && (
+                  <button
+                    onClick={() => handleSeeMore(post._id)}
+                    className="text-yellow-500"
+                  >
+                    {expandedPosts.includes(post._id) ? "See less" : "See more"}
+                  </button>
+                )}
+              </p>
+                    {post.photoUrl && (
+                      <img
+                        src={post?.photoUrl}
+                        alt="Post"
+                        className="mt-1 max-w-[330px] max-h-[330px] "
+                      />
+                    )}
+                  </div>
                 </div>
               ))
             )}
