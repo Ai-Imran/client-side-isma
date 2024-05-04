@@ -6,9 +6,12 @@ import { FaCarSide } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
+import useAdmin from "../hooks/useAdmin";
 // import RandomColorText from "./RandomColorText";
 
 const Navbar = () => {
+    // const [isAdmin] = useAdmin();
+    const isAdmin = true;
 
     const {user,logOut} = useContext(AuthContext)
 
@@ -50,6 +53,11 @@ const Navbar = () => {
                         </div>
                         <NavLink to={'/'} ink="true">হোম</NavLink>
                         {
+                            isAdmin && <>
+                            <NavLink to={'/allUsers'} className="text-white">AllUsers </NavLink>
+                            </>
+                        }
+                        {
                             user ? <NavLink to={'/user-start'}>শুরু করুন</NavLink> : <NavLink to={'/startSerives'}>সার্ভিস দেখুন</NavLink>
                         }
                         <NavLink to={'/posts'}>পোস্ট</NavLink>
@@ -69,8 +77,13 @@ const Navbar = () => {
                     <Link to={'/'} className=" ml-3 rounded font-serif  px-1 text-shadow text-lime-300 shad text-3xl" >Ismaqw</Link>
                 </div>
                 <div className="navbar-center  hidden lg:flex">
-                    <ul className="menu space-x-4 text-[18px]  ml-10 font-bold menu-horizontal px-1">
+                    <ul className="menu space-x-4 text-[16px]  ml-10 font-bold menu-horizontal px-1">
                        <NavLink to={'/'} ink="true">হোম</NavLink>
+                       {
+                            isAdmin && <>
+                            <NavLink to={'/allUsers'} className="text-white">AllUsers </NavLink>
+                            </>
+                        }
                        {
                         user ? <NavLink to={'/user-start'}>শুরু করুন</NavLink> : <NavLink to={'/startSerives'}>সার্ভিস দেখুন</NavLink>
                        }

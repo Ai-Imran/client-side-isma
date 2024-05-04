@@ -181,6 +181,7 @@ const Posts = () => {
                       />
                     )}
                   </div>
+                  <button>download</button>
                 </div>
               ))
             )}

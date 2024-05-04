@@ -35,7 +35,7 @@ const FindUser = () => {
         setSearchTerm(value);
         if (value === "") {
             // Show all users when search field value is empty
-            setDisplayedUsers(users.slice(0, 15));
+            setDisplayedUsers(users);
         }
     };
 
@@ -89,7 +89,7 @@ const FindUser = () => {
 
                             <span>{user?.name}</span>
 
-                            <p>{user.role}</p>
+                            <p>{user?.work}</p>
                             <div onClick={() => Swal.fire(`তথ্য সিকিউরিটির জন্য তার সম্পর্কে গোপন রাখা হয়েছে যদি বিস্তারিত জানতে চান আমাদের সাথে যোগাযোগ করুন`)} className="text-3xl lg:text-5xl text-lime-400">
                                 <BiSolidUserDetail />
                             </div>

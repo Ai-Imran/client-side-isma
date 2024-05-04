@@ -56,7 +56,7 @@ const Driver = () => {
       // Update user profile with image URL
       const newDriver = {
         name, phoneNumber,role:"Dirver", email, address, gender, vehicleType, drivingExperience,year,
-        monthlyEarnings, experience, vehicleOwnership, hasLicense,password, photoUrl: imageData.data.url
+        monthlyEarnings, experience, vehicleOwnership, hasLicense,password, photoUrl: imageData.data.url,work:"Driver"
       };
   
          await fetch('http://localhost:5000/users-my', {

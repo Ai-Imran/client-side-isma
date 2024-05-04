@@ -16,6 +16,7 @@ import FindUser from "../Pages/FindUser";
 import OrderCar from "../Pages/OrderCar";
 import ProblemMessage from "../Pages/ProblemMessage";
 import Posts from "../Pages/Posts";
+import AllUsers from "../Pages/AllUsers";
 
 export const router = createBrowserRouter([
     {
@@ -87,6 +88,10 @@ export const router = createBrowserRouter([
        {
         path: 'posts',
         element: <Posts/>
+       },
+       {
+        path: 'allUsers',
+        element: <AllUsers/>
        }
       ]
     },
