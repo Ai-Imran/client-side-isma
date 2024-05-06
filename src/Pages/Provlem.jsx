@@ -11,8 +11,8 @@ const Problem = () => {
         e.preventDefault();
         const name = e.target.name.value;
         const phoneNumber = e.target.number.value;
-        const email = e.target.email.value;
         const message = e.target.message.value;
+        const email = user?.email;
 
         const formData = {
             name,
@@ -104,11 +104,6 @@ const Problem = () => {
              />
       </div>
     
-               <div className="my-2 ml-4">
-               <label className=" " htmlFor="email">আপনার একটি ইমেইল দিন [Optional]</label>
-                <input defaultValue={user?.email} className="bg-gray-700 w-11/12 rounded-md text-white focus:border-lime-500 focus:border focus:shadow-lg outline-none px-3 py-2 block " type="email" name="email" placeholder="এখানে আপনার ইমেইল লিখুন" />
-               
-               </div>
                   <div className="mx-auto text-center">
                    <textarea name="message" className='  text-white px-3 bg-gray-700 py-2 lg:py-5 border-none outline-none rounded-md w-11/12 lg:h-[620px] lg:w-[600px]' placeholder='এখানে লিখুন .......' id="" cols="18" rows="10"></textarea>
                    </div>

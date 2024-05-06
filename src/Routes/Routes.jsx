@@ -17,6 +17,7 @@ import OrderCar from "../Pages/OrderCar";
 import ProblemMessage from "../Pages/ProblemMessage";
 import Posts from "../Pages/Posts";
 import AllUsers from "../Pages/AllUsers";
+import AllOrders from "../Pages/AllOrders";
 
 export const router = createBrowserRouter([
     {
@@ -90,8 +91,12 @@ export const router = createBrowserRouter([
         element: <Posts/>
        },
        {
-        path: 'allUsers',
+        path: 'secret-users',
         element: <AllUsers/>
+       },
+       {
+        path: 'show-orders',
+        element: <AllOrders/>
        }
       ]
     },

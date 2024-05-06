@@ -132,6 +132,7 @@ const Posts = () => {
                 rows="2"
               ></textarea>
               <input
+                required
                 type="file"
                 className="my-1 bg-gray-600 w-11/12 text-lime-400 rounded"
                 name="photofile"
@@ -177,11 +178,11 @@ const Posts = () => {
                       <img
                         src={post?.photoUrl}
                         alt="Post"
-                        className="mt-1 max-w-[330px] max-h-[330px] "
+                        className="mt-1 max-w-[330px] rounded max-h-[330px] "
                       />
                     )}
                   </div>
-                  <button>download</button>
+                
                 </div>
               ))
             )}

@@ -55,7 +55,41 @@ const AuthProviders = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
-            setLoading(false);
+            // if (currentUser) {
+            //     // Assuming currentUser is defined somewhere in your code
+            //     const userInfo = { email: currentUser.email };
+            //     fetch('http://localhost:5000/jwt', {
+            //         method: 'POST',
+            //         headers: {
+            //             'Content-Type': 'application/json'
+            //         },
+            //         body: JSON.stringify(userInfo)
+            //     })
+            //     .then(response => {
+            //         if (!response.ok) {
+            //             throw new Error('Network response was not ok');
+            //         }
+            //         // Log the response to inspect it
+            //         console.log(response);
+            //         return response.json();
+            //     })
+            //     .then(data => {
+            //         if (data.token) {
+            //             localStorage.setItem('access-token', data.token);
+            //             setLoading(false);
+            //         }
+            //     })
+            //     .catch(error => {
+            //         console.error('Error:', error);
+            //         setLoading(false);
+            //     });
+            // } else {
+            //     localStorage.removeItem('access-token');
+            //     setLoading(false);
+            // }
+                setLoading(false);
+            
+            
             console.log(currentUser);
         });
         return unsubscribe;

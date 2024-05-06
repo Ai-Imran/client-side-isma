@@ -14,6 +14,7 @@ const UserStartService = () => {
     const [errorMessage, setErrorMessage] = useState("");
     const [nullError, setNullError] = useState("আপনার যায়গা সিলেক্ট করুন");
     const navigate = useNavigate();
+    
 
     const handlePlaceChange = (e) => {
         const selectedValue = e.target.value;
@@ -68,11 +69,15 @@ const UserStartService = () => {
         e.preventDefault();
     
         // Gather form data
+        const orderDate = new Date().toISOString(); // Get current date and time
         const formData = new FormData(e.target);
         const formDataObject = {};
         formData.forEach((value, key) => {
             formDataObject[key] = value;
         });
+    
+        // Add orderDate to formDataObject
+        formDataObject['orderDate'] = orderDate;
     
         // Add additional data
         formDataObject['publicPrice'] = publicPrice;
@@ -102,6 +107,7 @@ const UserStartService = () => {
             // Handle errors here
         }
     };
+    
     
     
     // console.log(totalCost);

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { BiSolidUserDetail } from "react-icons/bi";
 import { FaSearch } from "react-icons/fa";
+import { RiAdminFill } from "react-icons/ri";
 import Swal from "sweetalert2";
 
 const FindUser = () => {
@@ -76,7 +77,7 @@ const FindUser = () => {
                     <FaSearch />
                 </div>
             </div>
-            <div className="mt-2 lg:w-1/2 lg:text-xl mx-auto">
+            <div className="mt-2 lg:w-1/2 lg:text-xl  overflow-x-auto mx-auto">
                 {displayedUsers.length > 0 ? (
                     displayedUsers.map(user => (
                         <div key={user._id} className="flex lg:gap-8 lg:my-2 py-1 items-center gap-3">
@@ -89,10 +90,18 @@ const FindUser = () => {
 
                             <span>{user?.name}</span>
 
-                            <p>{user?.work}</p>
+                            {user.role === 'admin' ? (
+                                <span className="text-yellow-400 font-bold">{user.role}</span>
+                            ) : (
+                                <p>{user?.work}</p>
+                            )}
+                           { user.role === 'admin' ? <RiAdminFill className="text-2xl text-rose-400 lg:text-5xl" /> :
                             <div onClick={() => Swal.fire(`তথ্য সিকিউরিটির জন্য তার সম্পর্কে গোপন রাখা হয়েছে যদি বিস্তারিত জানতে চান আমাদের সাথে যোগাযোগ করুন`)} className="text-3xl lg:text-5xl text-lime-400">
                                 <BiSolidUserDetail />
-                            </div>
+                            </div>}
+                            {
+                                user.role === 'admin' && <p>{user?.phoneNumber}</p>
+                            }
                         </div>
                     ))
                 ) : (
