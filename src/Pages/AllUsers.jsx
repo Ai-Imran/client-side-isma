@@ -19,14 +19,18 @@ const AllUsers = () => {
     const [filteredUsers, setFilteredUsers] = useState([]);
 
     useEffect(() => {
-        if (searchTerm.trim() === "") {
-            setFilteredUsers(users);
-        } else {
-            const filtered = users.filter(user =>
-                user.name.toLowerCase().includes(searchTerm.toLowerCase())
-            );
-            setFilteredUsers(filtered);
-        }
+        const filterUsers = () => {
+            if (searchTerm.trim() === "") {
+                setFilteredUsers(users);
+            } else {
+                const filtered = users.filter(user =>
+                    user.name.toLowerCase().includes(searchTerm.toLowerCase())
+                );
+                setFilteredUsers(filtered);
+            }
+        };
+
+        filterUsers();
     }, [users, searchTerm]);
 
     const handleSearchChange = (e) => {

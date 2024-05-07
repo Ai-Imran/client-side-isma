@@ -32,7 +32,9 @@ const Main = () => {
             <div className={`sticky top-0 pb-2 bg-[#192a56] transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
                 <Navbar />
             </div>
-            <Outlet />
+          <div className=''>
+          <Outlet />
+          </div>
         </div>
     );
 };

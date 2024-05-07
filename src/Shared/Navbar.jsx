@@ -44,7 +44,7 @@ const Navbar = () => {
                         <div className="drawer-side">
                             <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
 
-                            <ul className="menu backimage space-y-6 p-4 w-3/4 min-h-full text-xl font-bold text-base-content">
+                            <ul className="menu backimage space-y-6 p-4 w-3/4 min-h-full  font-bold text-base-content">
                                 {/* Sidebar content here */}
                                 <div className="text-white">
                                     {
@@ -59,6 +59,7 @@ const Navbar = () => {
                            <>
                             <NavLink to={'/secret-users'} className="text-white">All_Users</NavLink>
                             <NavLink to={'/show-orders'} className="text-white">All_Orders</NavLink>
+                            <NavLink to={'/fix-problems'} className="text-white">All_Problems</NavLink>
                            </>
                         )}
                                 {
@@ -87,6 +88,7 @@ const Navbar = () => {
                            <>
                             <NavLink to={'/secret-users'} className="text-white">All_Users</NavLink>
                             <NavLink to={'/show-orders'} className="text-white">All_Orders</NavLink>
+                            <NavLink to={'/fix-problems'} className="text-white">All_Problems</NavLink>
                            </>
                         )}
                         {
@@ -112,7 +114,7 @@ const Navbar = () => {
 
             </div>
 
-            <div className="grid  justify-items-center text-white grid-cols-6 lg:hidden text-3xl">
+            <div className="grid  justify-items-center text-white grid-cols-6 lg:hidden text-2xl">
                 <NavLink to={'/'} ink="true"><AiFillHome className=" transition delay-100" /></NavLink>
                 <NavLink to={'/contact'}><FaSearch className=" transition delay-100" /></NavLink>
                 <NavLink to={'/posts'} className=" transition delay-100"><FaAddressCard /></NavLink>

@@ -13,12 +13,14 @@ const Problem = () => {
         const phoneNumber = e.target.number.value;
         const message = e.target.message.value;
         const email = user?.email;
+        const date = new Date();
 
         const formData = {
             name,
             phoneNumber,
             email,
-            message
+            message,
+            date 
         };
 
         const options = {
@@ -42,7 +44,7 @@ const Problem = () => {
         }
     };
     return (
-        <div className=" min-h-screen pb-1">
+        <div className=" min-h-screen  pb-1">
             <div className="">
             </div>
            <div className="lg:flex my-10 gap-8 lg:px-8">

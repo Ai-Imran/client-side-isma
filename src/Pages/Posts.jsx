@@ -125,7 +125,7 @@ const Posts = () => {
             <form onSubmit={handleSubmit} className="mx-auto w-full">
               <textarea
                 required
-                className="text-black w-11/12 focus:border focus:border-lime-500 py-1 outline-none rounded px-2"
+                className="text-black w-3/4 focus:border focus:border-lime-500 py-1 outline-none rounded px-2"
                 name="content"
                 cols="40"
                 placeholder="এখানে লিখুন....."
