@@ -51,11 +51,12 @@ const Navbar = () => {
                                         user && <>
                                             <img className="text-white rounded-sm  mx-auto" src={user?.photoURL} alt="photo" />
                                             <p className="text-lime-400">{user?.displayName}</p>
+                                            
                                         </>
                                     }
                                 </div>
                                 <NavLink to={'/'} ink="true">হোম</NavLink>
-                                {(user?.email === 'iamsmallboy004@gmail.com' || user?.email === 'du@lal.com') && (
+                                {(user?.email === 'iamsmallboy004@gmail.com' || user?.email === 'mdimranahmed0143.com' || user?.email === 'imran@gmail.com' || user?.email === 'ismaqwhelp@gmail.com') && (
                            <>
                             <NavLink to={'/secret-users'} className="text-white">All_Users</NavLink>
                             <NavLink to={'/show-orders'} className="text-white">All_Orders</NavLink>

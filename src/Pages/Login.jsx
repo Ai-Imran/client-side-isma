@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import  { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProviders';
@@ -7,6 +7,7 @@ const Login = () => {
     const [show, setShow] = useState(false);
     const { signIn, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleGoogle = () => {
         googleSignIn()
@@ -14,7 +15,8 @@ const Login = () => {
                 navigate('/user-start');
             })
             .catch(err => {
-                console.log(err);
+                
+                // console.log(err);
             });
     };
 
@@ -29,20 +31,21 @@ const Login = () => {
                 navigate('/user-start');
             })
             .catch(err => {
+                setErrorMessage('সঠিক ইমেল বা পাসওয়ার্ড দিন। আবার চেষ্টা করুন।');
                 console.log(err);
             });
     };
 
     return (
-        <div className="text-white min-h-screen">
-            <div className="bg-gray-500 py-4 px-4 lg:px-10 lg:mb-10 lg:py-10 rounded-md mt-10 lg:mx-20 mx-4">
-                <p className="text-center my-10 font-bold text-xl">
+        <div className="text-gray-300 min-h-screen">
+            <div className="bg-ray-500 py-4 px-4 lg:px-10 lg:mb-10 lg:py-10 rounded-md  lg:mx-20 mx-4">
+                <p className="text-justify my-3 font-bold lg:text-xl">
                     আপনার যদি কোনো একাউন্ট না থাকে তাহলে এখানে ক্লিক করে{' '}
                     <Link to={'/signup'}>
                         <span className="text-lime-500 underline italic px-1"> একাউন্ট খুলুন </span>
                     </Link>
                 </p>
-                <form onSubmit={handleSubmit} className="lg:w-1/2 mx-auto">
+                <form onSubmit={handleSubmit} className="lg:w-1/2 text-[14px] lg:text-[16px] mx-auto">
                     <div className="my-2">
                         <label htmlFor="email" className="font-bold">
                             আপনি যে ইমেইল একাউন্ট খুলেছিলেন ঐ ইমেলটি লিখুন
@@ -74,6 +77,11 @@ const Login = () => {
                             পাসওয়ার্ড ভুলে গেছি
                         </Link>
                     </div>
+                    {errorMessage && (
+                    <div className="bg-red-500 text-white p-1 rounded-md">
+                        {errorMessage}
+                    </div>
+                )}
                     <div className="mx-auto text-center">
                         <div className="bg-emerald-950 mx-auto text-center to-yellow-300 mt-5 lg:mr-12 p-2 rounded-md font-semibold cursor-pointer">
                             <input
@@ -84,8 +92,8 @@ const Login = () => {
                         </div>
                     </div>
                 </form>
-                <div className="mx-auto lg:w-1/2 w-11/12">
-                    <p className="text-white font-bold text-justify">
+                <div className="mx-auto text-[14px] lg:text-[16px] lg:w-1/2 w-11/12">
+                    <p className=" font-bold text-justify">
                         আপনি চাইলে{' '}
                         <FaGoogle onClick={handleGoogle} className="inline-block mx-2 text-2xl text-lime-500" /> গুগল
                         দিয়ে একাউন্ট খুলতে পারেন কিন্তু এতে আমাদের এআই টুলস / অ্যালগরিদম আপনাকে খুঁজতে পারে

@@ -22,7 +22,7 @@ const Signup = () => {
     <div className="text-gray-300  min-h-screen">
       <div className="lg:flex gap-10">
         <div className="lg:w-1/4  px-6">
-          <p className="text-center my-4 text-white font-bold text-xl">আপনি কি হিসেবে একাউন্ট খুলতে চান (যাত্রী / ড্রাইভার) তা সিলেক্ট করুন।</p>
+          <p className="text-center my-4 text-white font-bold text-[14px] lg:text-[16px]">আপনি কি হিসেবে একাউন্ট খুলতে চান (যাত্রী / ড্রাইভার) তা সিলেক্ট করুন।</p>
           <div className={`lg:mb-6 rounded-md cursor-pointer px-4 py-4 ${location.pathname === "/signup/passenger" ? "border-lime-500 border" : ""}`} tabIndex={0} onClick={handlePassengerClick}>
             <div>
               <img className="md:w-[270px] text-center mx-auto rounded h-[200px]" src={passenger} alt="passenger image" />
@@ -44,7 +44,7 @@ const Signup = () => {
           <p className="text-rose-400 md:text-center ml-6 md:text-xl font-bold">
             {selection}
           </p>
-            <p className="text-center font-bold text-white text-xl mt-4">আপনার যদি একাউন্ট থাকে তাহলে <Link ink to={'/login'}><span className="text-lime-500 underline italic px-1"> লগইন করুন </span> </Link> 
+            <p className="text-center text-[14px] font-bold text-white lg:text-xl mt-4">আপনার যদি একাউন্ট থাকে তাহলে <Link ink to={'/login'}><span className="text-lime-500 underline italic px-1"> লগইন করুন </span> </Link> 
             </p>
           
           <Outlet />

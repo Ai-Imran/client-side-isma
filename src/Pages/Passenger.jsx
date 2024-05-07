@@ -42,7 +42,7 @@ const Passenger = () => {
 
     try {
       // Create user
-      const user = await createUser(email, password);
+       await createUser(email, password);
       // Upload image to ImgBB
       const formData = new FormData();
       formData.append('image', photoFile);
@@ -91,7 +91,7 @@ const Passenger = () => {
   
 
     return (
-        <div className="bg-gray-500 py-4 px-4 lg:px-10  lg:mb-10 lg:py-10 rounded-md mt-10 lg:mx-20 mx-4">
+        <div className="text-[14px] lg:text-[16px] py-4 px-4 lg:px-10  lg:mb-10 lg:py-10 rounded-md mt-10 lg:mx-20 mx-4">
             <form onSubmit={handleSubmit} className="lg:w-1/2  mx-auto">
                 <div className="my-2">
                 <label className="font-bold" htmlFor="name">আপনার নাম লিখুন</label>
