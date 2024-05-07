@@ -26,7 +26,7 @@ const Navbar = () => {
             <div className="navbar pt-1 md:pt-8">
                 <div className="flex flex-row-reverse justify-between ">
 
-                    <div className="drawer lg:hidden drawer-end">
+                    <div className="drawer  lg:hidden drawer-end">
                         <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
                         <div className="drawer-content">
                             {/* Page content here */}
@@ -72,7 +72,7 @@ const Navbar = () => {
                                 <NavLink to={'/help'}>আমাদের সহায়তা</NavLink>
                                 <NavLink to={'/ourSelf'}>আমাদের সর্ম্পকে</NavLink>
                                 {
-                                    user ? <span onClick={handleLogout} className="text-yellow-500">Logout</span> : <NavLink to={'/login'}>লগইন করুন</NavLink>
+                                    user ? <span onClick={handleLogout} className="text-yellow-500 pb-4">Logout</span> : <NavLink to={'/login'}>লগইন করুন</NavLink>
                                 }
                             </ul>
                         </div>
@@ -83,7 +83,7 @@ const Navbar = () => {
                     <Link to={'/'} className=" ml-3 rounded font-serif  px-1 text-shadow text-lime-300 shad text-3xl" >Ismaqw</Link>
                 </div>
                 <div className="navbar-center  hidden lg:flex">
-                    <ul className="menu space-x-4 text-[15px]  ml-10 font-bold menu-horizontal px-1">
+                    <ul className="menu space-x-4 text-[17px]  ml-10 font-bold menu-horizontal px-1">
                         <NavLink to={'/'} ink="true">হোম</NavLink>
                         {(user?.email === 'iamsmallboy004@gmail.com' || user?.email === 'du@lal.com') && (
                            <>
