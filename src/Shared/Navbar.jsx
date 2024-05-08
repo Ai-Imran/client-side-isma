@@ -61,6 +61,7 @@ const Navbar = () => {
                             <NavLink to={'/secret-users'} className="text-white">All_Users</NavLink>
                             <NavLink to={'/show-orders'} className="text-white">All_Orders</NavLink>
                             <NavLink to={'/fix-problems'} className="text-white">All_Problems</NavLink>
+                            <NavLink to={'/secret-revenue'} className="text-white">Revenue</NavLink>
                            </>
                         )}
                                 {
@@ -82,13 +83,14 @@ const Navbar = () => {
                     <Link to={'/'} className=" ml-3 rounded font-serif  px-1 text-shadow text-lime-300 shad text-3xl" >Ismaqw</Link>
                 </div>
                 <div className="navbar-center  hidden lg:flex">
-                    <ul className="menu space-x-4 text-[17px]  ml-10 font-bold menu-horizontal px-1">
+                    <ul className="menu space-x-4  text-[17px] lg:text-[14px]  ml-10 font-bold menu-horizontal px-1">
                         <NavLink to={'/'} ink="true">হোম</NavLink>
                         {(user?.email === 'iamsmallboy004@gmail.com' || user?.email === 'du@lal.com') && (
                            <>
                             <NavLink to={'/secret-users'} className="text-white">All_Users</NavLink>
                             <NavLink to={'/show-orders'} className="text-white">All_Orders</NavLink>
                             <NavLink to={'/fix-problems'} className="text-white">All_Problems</NavLink>
+                            <NavLink to={'/secret-revenue'} className="text-white">Revenue</NavLink>
                            </>
                         )}
                         {

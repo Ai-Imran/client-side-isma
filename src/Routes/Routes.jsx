@@ -20,6 +20,7 @@ import AllUsers from "../Pages/AllUsers";
 import AllOrders from "../Pages/AllOrders";
 import AllProblems from "../Pages/AllProblems";
 import Error from "../Pages/Error";
+import AddRevenue from "../Pages/AddRevenue";
 
 export const router = createBrowserRouter([
     {
@@ -105,6 +106,10 @@ export const router = createBrowserRouter([
        {
         path: 'fix-problems',
         element: <AllProblems/>
+       },
+       {
+        path : 'secret-revenue',
+        element : <AddRevenue/>
        }
       ]
     },
