@@ -63,7 +63,7 @@ const FindUser = () => {
     };
 
     return (
-        <div className="mt-2 mx-2 text-white overflow-x-auto">
+        <div className="mt-2 mx-2 text-white min-h-screen overflow-x-auto">
             <div className="flex rounded  w-3/4 lg:w-1/2 items-center mx-auto">
                 <input
                     className="px-2 rounded-l py-1 outline-none lg:w-[590px] text-black"

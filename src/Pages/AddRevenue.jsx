@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const AddRevenue = () => {
@@ -83,7 +83,7 @@ const AddRevenue = () => {
                 />
                 <button className='bg-black p-1 rounded' type="submit">Calculate</button>
             </form>
-            <div className='mx-2 text-[14px]'>
+            <div className='mx-2 lg:w-1/2 lg:mx-auto text-[14px]'>
                 <h2>Total Revenue: {totalMoney}</h2>
                 <h3>Adding Money List : {addingMoneyList.length} </h3>
                 <ul>

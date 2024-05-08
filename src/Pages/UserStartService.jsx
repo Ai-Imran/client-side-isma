@@ -100,7 +100,7 @@ const UserStartService = () => {
             }
     
             // Handle successful response
-            console.log('Order placed successfully!');
+            // console.log('Order placed successfully!');
             navigate('/order-success'); // Redirect to home or any other page
         } catch (error) {
             console.error('There was a problem with your fetch operation:', error);

@@ -19,28 +19,29 @@ const Banner = () => {
                         বাংলাদেশের মধ্যে <br /> অন্যতম রাইড শেয়ারিং সার্ভিস
                     </h1>
                     <h1 className='lg:w-3/4 lg:ml-20 my-6 text-justify lg:text-center px-4'>
-                        আপনি যদি কোনােরকম ঝামেলা ছাড়াই স্বল্প মূল্যেে আপনার নির্দিষ্ট গন্তব্যে পৌঁছাতে চান । তাহলে আর দেরি না করে আমাদের সাথে সরাসরি যোগাযোগ করুন 
+                        আপনি যদি কোনােরকম ঝামেলা ছাড়াই স্বল্প মূল্যেে আপনার নির্দিষ্ট গন্তব্যে পৌঁছাতে চান । তাহলে আর দেরি না করে আমাদের সাথে সরাসরি যোগাযোগ করুন
                     </h1>
                     <div className='border  px-8 py-10 rounded hover:border-lime-500 md:w-3/4 mx-2 md:mx-auto'>
                         <div className="md:flex space-y-6 grid items-center justify-center md:gap-10">
 
                             <div className="flex  text-4xl gap-4 md:gap-8">
-                            <FaPhoneAlt className='hover:text-lime-500 hover:rotate-90 transition delay-300 duration-300 '/>
+                                <FaPhoneAlt className='hover:text-lime-500 hover:rotate-90 transition delay-300 duration-300 ' />
 
-                            <FaWhatsapp className='hover:text-lime-500 hover:rotate-45 transition delay-300 duration-300 '/>
-                            <img className='w-10 h-10 hover:bg-lime-500 hover:rotate-45 transition delay-300 duration-300 ' src={imo} alt="" />
-                        </div>
+                                <FaWhatsapp className='hover:text-lime-500 hover:rotate-45 transition delay-300 duration-300 ' />
+                                <img className='w-10 h-10 hover:bg-lime-500 hover:rotate-45 transition delay-300 duration-300 ' src={imo} alt="" />
+                            </div>
                             <p className="font-semibold hover:text-lime-500 text-xl">
                                 01906951915 <br /> 01605969098
                             </p>
                         </div>
                         <div className="divider divider-secondary my-8"> অথবা </div>
                         <div className="grid grid-cols-3 lg:grid-col-5 md:ml-24 text-4xl gap-8">
-                        <FaFacebook className='hover:text-lime-500 hover:rotate-45 transition delay-300 duration-300 '/>
-                            <FaFacebookMessenger className='hover:text-lime-500 hover:rotate-45 transition delay-300 duration-300 '/>
-                            <FaTwitter className='hover:text-lime-500 hover:rotate-45 transition delay-300 duration-300 '/>
-                            <FaInstagram className='hover:text-lime-500 hover:rotate-45 transition delay-300 duration-300 '/>
-                            <FaYoutube className='hover:text-lime-500 hover:rotate-180 transition delay-300 duration-300 '/>
+                            <a className='hover:text-lime-500  transition delay-300 duration-300 ' target="_blank" href="https://www.facebook.com/profile.php?id=61559347166517">  <FaFacebook /></a>
+                            <a className='hover:text-lime-500  transition delay-300 duration-300 ' target="_blank" href="https://www.facebook.com/imran.chowdhury.90663894">  <FaFacebookMessenger /></a>
+                            <FaTwitter className='hover:text-lime-500 hover:rotate-45 transition delay-300 duration-300 ' />
+                            <a target="_blank"  href="https://www.instagram.com/ai_imran143/"> <FaInstagram className='hover:text-lime-500 hover:rotate-45 transition delay-300 duration-300 ' /></a>
+                           
+                            <FaYoutube className='hover:text-lime-500 hover:rotate-180 transition delay-300 duration-300 ' />
 
                         </div>
                     </div>
@@ -52,7 +53,7 @@ const Banner = () => {
             </div>
             {/* why our services */}
             <div className=" lg:flex ">
-                 <div className='lg:w-1/2 p-4 md:p-8 '>
+                <div className='lg:w-1/2 p-4 md:p-8 '>
                     <img className='rounded-lg' src={car3} alt="" />
                 </div>
                 <div className='lg:w-1/2 text-center text-white ‍'>
@@ -78,51 +79,51 @@ const Banner = () => {
                     </p>
 
                 </div>
-               
+
             </div>
             {/* passer by */}
             <div className=" lg:flex my-10 md:my-20">
                 <div className='lg:w-1/2 text-gray-300'>
-                <h2 className="font-bold text-white text-center mb-4 md:text-3xl text-2xl px-4">
-                আমি একজন যাত্রী । এখন আমি কীভাবে আপনাদের সার্ভিসটি নিতে পারি ?
-                </h2>
-                <p className='px-4 text-justify'>
-                    আপনি যদি আপনার অফিসে অথবা দূরে কোথা্ও যা্ওয়ার জন্য কোনো গাড়ি খুজতেছেন । অথবা ইমার্জেন্সি কোনো গাড়ির প্রয়োজন পড়ে তাহলে আর চিন্তা নেই। এখন আর গাড়ির জন্য বসে থাকতে হবে না। আমাদের শুধুমাত্র একটি কল দিন অথবা যোগাযোগ করুন আর কিছুক্ষণ অপেক্ষা করুন। আপনার যাত্রা শুরু করার জন্য গাড়িটি পৌঁছে যাবে।কোনোরকম ঝামেলা ছাড়া,যেকোনো সময় বৃষ্টিতে অথবা প্রচন্ড  শীতে কোনো সমস্যা নেই। আমাদের সাথে কেবল যোগাযোগ করুন। না হলে  সরাসরি কল করুন <span className='text-xl text-lime-500 underline'>01906951915 </span> অথবা <span className='text-xl text-lime-500 underline'>01814189243</span> অথবা  <a target="_blank" href="https://www.facebook.com/imran.chowdhury.90663894"><FaFacebook className='inline-block text-3xl text-lime-500'/> </a> <br /> <br /> সবচেয়ে ভালো হয় যদি আপনার একটি একাউন্ট থাকে। যদি না থাকে এখনই বিনামূল্যে খুলে নিন এখানে ক্লিক করে <Link className='italic text-lime-500 underline' to={'/signup'}> একাউন্ট খুলুন  </Link> আপনি সঠিক তথ্য দিয়ে একাউন্টটি খুলবেন, আপনি যদি ড্রাইভার হন তাহলে ড্রাইভার সিলেক্ট করবেন আর যদি যাত্রী হন তাহলে যাত্রী সিলেক্ট করবেন।তারপর শর্তানুযায়ী আপনার নাম,পেশা ছবি ইত্যাদি দিবেন।তাহলেই আপনার একটি একাউন্ট খুলা হয়ে যাবে। আর আপনি যেকোনো সুযোগ সুবিধা পেতে পারবেন। টাকা পয়সা লেনদেন করার জন্য যদি বিকাশ/নগদ/রকেট থাকে তাহলে গাড়ি ভাড়া নিয়ে কোনো ঝামেলা থাকবে না।না থাকলেও সমস্যা নেই তবে একটা বিকাশ একাউন্ট থাকা অবশ্যই ভালো।
-<br />
-                    এছাড়াও আপনি যদি কোনো সমস্যায় পড়েন অথবা আলাদাভাবে
-                     আরো কোনো বিশেষ সুবিধা চান তাহলে <Link className='italic text-lime-500 underline' to={'/problem'}> আপনার সমস্যা </Link> এখানে গিয়ে আপনার মূল্যবান মন্তব্য দিয়ে আমাদের সহায়তা করতে পারেন।
-                    কারন আপনার এক-একটি সমস্যা আমাদের তা দূর করা প্রধান কর্তব্য।  ধন্যবাদ।
-                </p>
-                
+                    <h2 className="font-bold text-white text-center mb-4 md:text-3xl text-2xl px-4">
+                        আমি একজন যাত্রী । এখন আমি কীভাবে আপনাদের সার্ভিসটি নিতে পারি ?
+                    </h2>
+                    <p className='px-4 text-justify'>
+                        আপনি যদি আপনার অফিসে অথবা দূরে কোথা্ও যা্ওয়ার জন্য কোনো গাড়ি খুজতেছেন । অথবা ইমার্জেন্সি কোনো গাড়ির প্রয়োজন পড়ে তাহলে আর চিন্তা নেই। এখন আর গাড়ির জন্য বসে থাকতে হবে না। আমাদের শুধুমাত্র একটি কল দিন অথবা যোগাযোগ করুন আর কিছুক্ষণ অপেক্ষা করুন। আপনার যাত্রা শুরু করার জন্য গাড়িটি পৌঁছে যাবে।কোনোরকম ঝামেলা ছাড়া,যেকোনো সময় বৃষ্টিতে অথবা প্রচন্ড  শীতে কোনো সমস্যা নেই। আমাদের সাথে কেবল যোগাযোগ করুন। না হলে  সরাসরি কল করুন <span className='text-xl text-lime-500 underline'>01906951915 </span> অথবা <span className='text-xl text-lime-500 underline'>01605969098</span> অথবা  <a target="_blank" href="https://www.facebook.com/imran.chowdhury.90663894"><FaFacebook className='inline-block text-3xl text-lime-500' /> </a> <br /> <br /> সবচেয়ে ভালো হয় যদি আপনার একটি একাউন্ট থাকে। যদি না থাকে এখনই বিনামূল্যে খুলে নিন এখানে ক্লিক করে <Link className='italic text-lime-500 underline' to={'/signup'}> একাউন্ট খুলুন  </Link> আপনি সঠিক তথ্য দিয়ে একাউন্টটি খুলবেন, আপনি যদি ড্রাইভার হন তাহলে ড্রাইভার সিলেক্ট করবেন আর যদি যাত্রী হন তাহলে যাত্রী সিলেক্ট করবেন।তারপর শর্তানুযায়ী আপনার নাম,পেশা ছবি ইত্যাদি দিবেন।তাহলেই আপনার একটি একাউন্ট খুলা হয়ে যাবে। আর আপনি যেকোনো সুযোগ সুবিধা পেতে পারবেন। টাকা পয়সা লেনদেন করার জন্য যদি বিকাশ/নগদ/রকেট থাকে তাহলে গাড়ি ভাড়া নিয়ে কোনো ঝামেলা থাকবে না।না থাকলেও সমস্যা নেই তবে একটা বিকাশ একাউন্ট থাকা অবশ্যই ভালো।
+                        <br />
+                        এছাড়াও আপনি যদি কোনো সমস্যায় পড়েন অথবা আলাদাভাবে
+                        আরো কোনো বিশেষ সুবিধা চান তাহলে <Link className='italic text-lime-500 underline' to={'/problem'}> আপনার সমস্যা </Link> এখানে গিয়ে আপনার মূল্যবান মন্তব্য দিয়ে আমাদের সহায়তা করতে পারেন।
+                        কারন আপনার এক-একটি সমস্যা আমাদের তা দূর করা প্রধান কর্তব্য।  ধন্যবাদ।
+                    </p>
+
                 </div>
                 <div className='lg:w-1/2 px-4 mt-4 md:px-8'>
-                <img className='rounded-lg' src={img1} alt="" />
+                    <img className='rounded-lg' src={img1} alt="" />
                 </div>
             </div>
             {/* dirver */}
             <div className="lg:flex lg:my-20">
-            <div className='lg:w-1/2 text-gray-300'>
-                <h2 className="font-bold text-white text-center mb-4 md:text-3xl text-2xl px-4">
-                আমি একজন ড্রাইভার । এখন আমি কীভাবে আপনাদের সার্ভিসটি নিতে পারি ?
-                </h2>
-                <p className='px-4 text-justify'>
-                আপনি যদি একজন ড্রাইভার হয়ে থাকেন তাহলে আপনার দায়িত্ব হবে যাত্রী দেরকে সঠিক যায়গায় পৌঁছে দেওয়া । তবে কিছু নিয়মকানুন মেনে গাড়ি চালাবেন যেমন <span className="text-yellow-400">দ্রুত যেতে কখনোই গাড়ি ওভারটেক করতে যাবেন না। ট্রাফিক আইন মেনে চলবেন। গাড়ির লাইসেন্স থাকতে হবে। গাড়িতে অতিরিক্ত যাত্রী কখনোই নেওয়া উচিত নয় এতে করে যাত্রীদের বসতে অসুবিধে হতে পারে তবে পরিস্থিতি অনুযায়ী সেটা ভিন্ন হতে পারে।যাত্রা শুরুর পূর্বে আমাদের সাথে যোগাযোগ করে আপনার ভাড়া ও টেক্স/ভ্যাট সম্পর্কে জেনে নিবেন</span> ।  আর অবশ্যই আপনার গাড়ির যন্ত্রাংশ চেক করে নিবেন।এতে করে যেকোনো দূর্ঘটনা এড়াতে পারবেন।এবং সবসময় সতর্ক থাকবেন। আপনি আপনার ডাইভিং এর শুরুটা এখনই করুন <br /> 
-                সবচেয়ে ভালো হয় যদি আপনার একটি একাউন্ট থাকে। যদি না থাকে এখনই বিনামূল্যে খুলে নিন এখানে ক্লিক করে <Link className='italic text-lime-500 underline' to={'/signup'}> একাউন্ট খুলুন  </Link> আপনি সঠিক তথ্য দিয়ে একাউন্টটি খুলবেন, আপনি যদি ড্রাইভার হন তাহলে ড্রাইভার সিলেক্ট করবেন আর যদি যাত্রী হন তাহলে যাত্রী সিলেক্ট করবেন।তারপর শর্তানুযায়ী আপনার নাম,পেশা ছবি ইত্যাদি দিবেন।তাহলেই আপনার একটি একাউন্ট খুলা হয়ে যাবে। আর আপনি যেকোনো সুযোগ সুবিধা পেতে পারবেন। টাকা পয়সা লেনদেন করার জন্য যদি বিকাশ/নগদ/রকেট থাকে তাহলে গাড়ি ভাড়া নিয়ে কোনো ঝামেলা থাকবে না।না থাকলেও সমস্যা নেই তবে একটা বিকাশ একাউন্ট থাকা অবশ্যই ভালো।
-<br />
-                এছাড়াও আপনি যদি কোনো সমস্যায় পড়েন অথবা আলাদাভাবে
-                     আরো কোনো বিশেষ সুবিধা চান তাহলে <Link className='italic text-lime-500 underline' to={'/problem'}> আপনার সমস্যা </Link> এখানে গিয়ে আপনার মূল্যবান মন্তব্য দিয়ে আমাদের সহায়তা করতে পারেন।
-                    কারন আপনার এক-একটি সমস্যা আমাদের তা দূর করা প্রধান কর্তব্য।  ধন্যবাদ।
+                <div className='lg:w-1/2 text-gray-300'>
+                    <h2 className="font-bold text-white text-center mb-4 md:text-3xl text-2xl px-4">
+                        আমি একজন ড্রাইভার । এখন আমি কীভাবে আপনাদের সার্ভিসটি নিতে পারি ?
+                    </h2>
+                    <p className='px-4 text-justify'>
+                        আপনি যদি একজন ড্রাইভার হয়ে থাকেন তাহলে আপনার দায়িত্ব হবে যাত্রী দেরকে সঠিক যায়গায় পৌঁছে দেওয়া । তবে কিছু নিয়মকানুন মেনে গাড়ি চালাবেন যেমন <span className="text-yellow-400">দ্রুত যেতে কখনোই গাড়ি ওভারটেক করতে যাবেন না। ট্রাফিক আইন মেনে চলবেন। গাড়ির লাইসেন্স থাকতে হবে। গাড়িতে অতিরিক্ত যাত্রী কখনোই নেওয়া উচিত নয় এতে করে যাত্রীদের বসতে অসুবিধে হতে পারে তবে পরিস্থিতি অনুযায়ী সেটা ভিন্ন হতে পারে।যাত্রা শুরুর পূর্বে আমাদের সাথে যোগাযোগ করে আপনার ভাড়া ও টেক্স/ভ্যাট সম্পর্কে জেনে নিবেন</span> ।  আর অবশ্যই আপনার গাড়ির যন্ত্রাংশ চেক করে নিবেন।এতে করে যেকোনো দূর্ঘটনা এড়াতে পারবেন।এবং সবসময় সতর্ক থাকবেন। আপনি আপনার ডাইভিং এর শুরুটা এখনই করুন <br />
+                        সবচেয়ে ভালো হয় যদি আপনার একটি একাউন্ট থাকে। যদি না থাকে এখনই বিনামূল্যে খুলে নিন এখানে ক্লিক করে <Link className='italic text-lime-500 underline' to={'/signup'}> একাউন্ট খুলুন  </Link> আপনি সঠিক তথ্য দিয়ে একাউন্টটি খুলবেন, আপনি যদি ড্রাইভার হন তাহলে ড্রাইভার সিলেক্ট করবেন আর যদি যাত্রী হন তাহলে যাত্রী সিলেক্ট করবেন।তারপর শর্তানুযায়ী আপনার নাম,পেশা ছবি ইত্যাদি দিবেন।তাহলেই আপনার একটি একাউন্ট খুলা হয়ে যাবে। আর আপনি যেকোনো সুযোগ সুবিধা পেতে পারবেন। টাকা পয়সা লেনদেন করার জন্য যদি বিকাশ/নগদ/রকেট থাকে তাহলে গাড়ি ভাড়া নিয়ে কোনো ঝামেলা থাকবে না।না থাকলেও সমস্যা নেই তবে একটা বিকাশ একাউন্ট থাকা অবশ্যই ভালো।
+                        <br />
+                        এছাড়াও আপনি যদি কোনো সমস্যায় পড়েন অথবা আলাদাভাবে
+                        আরো কোনো বিশেষ সুবিধা চান তাহলে <Link className='italic text-lime-500 underline' to={'/problem'}> আপনার সমস্যা </Link> এখানে গিয়ে আপনার মূল্যবান মন্তব্য দিয়ে আমাদের সহায়তা করতে পারেন।
+                        কারন আপনার এক-একটি সমস্যা আমাদের তা দূর করা প্রধান কর্তব্য।  ধন্যবাদ।
 
-                </p>
-                
+                    </p>
+
                 </div>
                 <div className='lg:w-1/2 md:px-8 mt-4 px-4'>
-                <img className='rounded-lg' src={img4} alt="" />
+                    <img className='rounded-lg' src={img4} alt="" />
                 </div>
             </div>
             <div className="mx-auto text-center">
                 <Link to={'/login'} className='md:w-3/12 '>
-                <button className="  w-[346px] rounded py-1 mt-4 md:w-3/12 bg-purple-800 text-white font-bold text-xl">একাউন্ট খুলুন</button>
+                    <button className="  w-[346px] rounded py-1 mt-4 md:w-3/12 bg-purple-800 text-white font-bold text-xl">একাউন্ট খুলুন</button>
                 </Link>
             </div>
         </div>

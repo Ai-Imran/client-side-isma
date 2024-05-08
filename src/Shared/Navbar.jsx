@@ -51,19 +51,19 @@ const Navbar = () => {
                                         user && <>
                                             <img className="text-white rounded-sm  mx-auto" src={user?.photoURL} alt="photo" />
                                             <p className="text-lime-400">{user?.displayName}</p>
-                                            
+
                                         </>
                                     }
                                 </div>
                                 <NavLink to={'/'} ink="true">হোম</NavLink>
-                                {(user?.email === 'iamsmallboy004@gmail.com' || user?.email === 'mdimranahmed0143.com' || user?.email === 'imran@gmail.com' || user?.email === 'ismaqwhelp@gmail.com') && (
-                           <>
-                            <NavLink to={'/secret-users'} className="text-white">All_Users</NavLink>
-                            <NavLink to={'/show-orders'} className="text-white">All_Orders</NavLink>
-                            <NavLink to={'/fix-problems'} className="text-white">All_Problems</NavLink>
-                            <NavLink to={'/secret-revenue'} className="text-white">Revenue</NavLink>
-                           </>
-                        )}
+                                {(user?.email === 'iamsmallboy004@gmail.com' || user?.email === 'mdimranahmed0143@gmail.com' || user?.email === 'imran@gmail.com' || user?.email === 'ismaqwhelp@gmail.com' || user?.email === 'ikimranahmed00143@gmail.com' || user?.email === 'ikimranahmed0143@gmail.com' || user?.email === 'iamfirstwin022@gmail.com') && (
+                                    <>
+                                        <NavLink to={'/secret-users'} className="text-white">All_Users</NavLink>
+                                        <NavLink to={'/show-orders'} className="text-white">All_Orders</NavLink>
+                                        <NavLink to={'/fix-problems'} className="text-white">All_Problems</NavLink>
+                                        <NavLink to={'/secret-revenue'} className="text-white">Revenue</NavLink>
+                                    </>
+                                )}
                                 {
                                     user ? <NavLink to={'/user-start'}>শুরু করুন</NavLink> : <NavLink to={'/startSerives'}>সার্ভিস দেখুন</NavLink>
                                 }
@@ -85,14 +85,14 @@ const Navbar = () => {
                 <div className="navbar-center  hidden lg:flex">
                     <ul className="menu space-x-4  text-[17px] lg:text-[14px]  ml-10 font-bold menu-horizontal px-1">
                         <NavLink to={'/'} ink="true">হোম</NavLink>
-                        {(user?.email === 'iamsmallboy004@gmail.com' || user?.email === 'du@lal.com') && (
-                           <>
-                            <NavLink to={'/secret-users'} className="text-white">All_Users</NavLink>
-                            <NavLink to={'/show-orders'} className="text-white">All_Orders</NavLink>
-                            <NavLink to={'/fix-problems'} className="text-white">All_Problems</NavLink>
-                            <NavLink to={'/secret-revenue'} className="text-white">Revenue</NavLink>
-                           </>
-                        )}
+                        {(user?.email === 'iamsmallboy004@gmail.com' || user?.email === 'mdimranahmed0143@gmail.com' || user?.email === 'imran@gmail.com' || user?.email === 'ismaqwhelp@gmail.com' || user?.email === 'ikimranahmed00143@gmail.com' || user?.email === 'ikimranahmed0143@gmail.com' || user?.email === 'iamfirstwin022@gmail.com') && (
+                                    <>
+                                        <NavLink to={'/secret-users'} className="text-white">All_Users</NavLink>
+                                        <NavLink to={'/show-orders'} className="text-white">All_Orders</NavLink>
+                                        <NavLink to={'/fix-problems'} className="text-white">All_Problems</NavLink>
+                                        <NavLink to={'/secret-revenue'} className="text-white">Revenue</NavLink>
+                                    </>
+                                )}
                         {
                             user ? <NavLink to={'/user-start'}>শুরু করুন</NavLink> : <NavLink to={'/startSerives'}>সার্ভিস দেখুন</NavLink>
                         }

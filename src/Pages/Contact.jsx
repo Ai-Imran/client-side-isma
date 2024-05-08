@@ -34,8 +34,10 @@ const Contact = () => {
                         </div>
                         <div className="divider divider-secondary my-8"> অথবা </div>
                         <div className="grid grid-cols-3 lg:grid-col-5 md:ml-16 ml-8 lg:mt-10 text-4xl gap-8">
-                            <FaFacebook className='hover:text-lime-500 hover:rotate-45 transition delay-300 duration-300 '/>
-                            <FaFacebookMessenger className='hover:text-lime-500 hover:rotate-45 transition delay-300 duration-300 '/>
+                         
+                            <a className='hover:text-lime-500 hover:rotate-45 transition delay-300 duration-300 ' target="_blank" href="https://www.facebook.com/profile.php?id=61559347166517">  <FaFacebook /></a>
+                            <a className='hover:text-lime-500 hover:rotate-45 transition delay-300 duration-300 ' target="_blank" href="https://www.facebook.com/imran.chowdhury.90663894">  <FaFacebookMessenger /></a>
+                           
                             <FaTwitter className='hover:text-lime-500 hover:rotate-45 transition delay-300 duration-300 '/>
                             <FaInstagram className='hover:text-lime-500 hover:rotate-45 transition delay-300 duration-300 '/>
                             <FaYoutube className='hover:text-lime-500 hover:rotate-180 transition delay-300 duration-300 '/>

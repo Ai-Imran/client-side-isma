@@ -81,6 +81,8 @@ const Passenger = () => {
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
         setFirebaseError('ইমেইল ইতিমধ্যে ব্যবহার করা হয়েছে।');
+      } else if (error.code === 'auth/weak-password') {
+        setFirebaseError('পাসওয়ার্ডটি অতিলম্বে সাদরের অন্তত ৬ টি অক্ষর হতে হবে।');
       } else {
         setFirebaseError('একটি অজানা ত্রুটি ঘটেছে।');
       }
@@ -115,7 +117,7 @@ const Passenger = () => {
                <div className="my-2">
                <label className="font-bold " htmlFor="email">আপনার একটি ইমেইল দিন</label>
                 <input className="bg-gray-700 w-11/12 rounded-md text-white focus:border-lime-500 focus:border focus:shadow-lg outline-none px-3 py-2 block " type="email" name="email" placeholder="এখানে আপনার ইমেইল লিখুন" />
-                {firebaseError && <p className="text-yellow-500 mt-1">{firebaseError}</p>}
+              
                </div>
                <div className="my-2">
                 <label className="font-bold" htmlFor="year">আপনার বয়স লিখুন</label>
@@ -154,6 +156,7 @@ const Passenger = () => {
                 আমাদের <Link className="text-lime-500 italic underline mx-1" to={'/terms&condition'}>নীতিমালা</Link> মনে চুলন।
                 </p>
                  </div>
+                {firebaseError && <p className="text-yellow-500 ">{firebaseError}</p>}
                 <div className="mx-auto  text-center">
                 <div className='bg-emerald-950 mx-auto text-center  to-yellow-300 mt-5 p-2 rounded-md font-semibold cursor-pointer '>
                  <input className=' lg:w-[350px] text-center mx-auto font-bold text-white cursor-pointer' type="submit" value="সাবমিট করুন" />

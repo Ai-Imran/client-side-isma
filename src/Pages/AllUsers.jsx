@@ -29,9 +29,10 @@ const AllUsers = () => {
                 setFilteredUsers(filtered);
             }
         };
-
+    
         filterUsers();
-    }, [users, searchTerm]);
+    }, [users, searchTerm]); // Add searchTerm and users as dependencies
+    
 
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value);
