@@ -19,14 +19,17 @@ import Posts from "../Pages/Posts";
 import AllUsers from "../Pages/AllUsers";
 import AllOrders from "../Pages/AllOrders";
 import AllProblems from "../Pages/AllProblems";
+import Error from "../Pages/Error";
 
 export const router = createBrowserRouter([
     {
       path: "/",
       element: <Main/> ,
+      errorElement: <Error/>,
       children : [
        {
         path: '/',
+        
         element: <HomeLayout/>
        },
        {
