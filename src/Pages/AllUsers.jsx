@@ -126,9 +126,9 @@ const AllUsers = () => {
 
     return (
         <div className="text-gray-200 min-h-screen overflow-x-auto px-2">
-            <div className="flex rounded w-3/4 lg:w-1/2 items-center mx-auto">
+            <div className="flex rounded  lg:w-1/2 items-center lg:mx-auto">
                 <input
-                    className="px-2 rounded-l py-1 outline-none lg:w-[590px] text-black"
+                    className="px-2  rounded-l py-1 outline-none w-[280px] my-1 lg:w-[590px] text-black"
                     type="search"
                     placeholder="Search here"
                     value={searchTerm}

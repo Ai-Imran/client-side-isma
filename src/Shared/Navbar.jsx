@@ -44,7 +44,7 @@ const Navbar = () => {
                         <div className="drawer-side">
                             <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
 
-                            <ul className="menu backimage space-y-6 p-4 w-3/4 min-h-full  font-bold text-base-content">
+                            <ul className="menu backimage space-y-6 p-4 w-3/4 min-h-full text-xl font-bold text-base-content">
                                 {/* Sidebar content here */}
                                 <div className="text-white">
                                     {
@@ -78,7 +78,6 @@ const Navbar = () => {
                         </div>
 
                     </div>
-                    {/* <div className="border p-2 border-dashed ml-3 text-shadow rounded-full border:animate-spin"> <RandomColorText className="bg-green-500 " text={'0'}/> </div> */}
 
                     <Link to={'/'} className=" ml-3 rounded font-serif  px-1 text-shadow text-lime-300 shad text-3xl" >Ismaqw</Link>
                 </div>
@@ -115,7 +114,7 @@ const Navbar = () => {
 
             </div>
 
-            <div className="grid  justify-items-center text-white grid-cols-6 lg:hidden text-2xl">
+            <div className="grid  justify-items-center text-white grid-cols-6 lg:hidden text-3xl">
                 <NavLink to={'/'} ink="true"><AiFillHome className=" transition delay-100" /></NavLink>
                 <NavLink to={'/contact'}><FaSearch className=" transition delay-100" /></NavLink>
                 <NavLink to={'/posts'} className=" transition delay-100"><FaAddressCard /></NavLink>

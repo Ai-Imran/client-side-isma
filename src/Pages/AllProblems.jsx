@@ -80,9 +80,9 @@ const AllProblems = () => {
 
     return (
         <div className="min-h-screen text-gray-200 overflow-x-auto px-2">
-            <div className="flex rounded w-3/4 lg:w-1/2 items-center mx-auto">
+            <div className="flex rounded  lg:w-1/2 items-center mx-auto">
                 <input
-                    className="px-2 rounded-l py-1 outline-none lg:w-[590px] text-black"
+                    className="px-2 w-[280px] my-1 rounded-l py-1 outline-none lg:w-[590px] text-black"
                     type="search"
                     placeholder="Search here"
                     value={searchTerm}
