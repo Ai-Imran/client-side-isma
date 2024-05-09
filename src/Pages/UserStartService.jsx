@@ -27,13 +27,13 @@ const UserStartService = () => {
             setTotalPassenger(0); // Reset the total passenger count
             setErrorMessage(""); // Reset the error message
             return;
-        } else if (selectedValue === "homna to batakandi") {
+        } else if (selectedValue === "হোমনা থেকে গোয়ারিভাংঙ্গা") {
             setPublicPrice(15);
             setTotalCost(15 + taxPrice);
             setNullError("");
-        } else if (selectedValue === "goaribhanga to homna") {
-            setPublicPrice(25);
-            setTotalCost(25 + taxPrice);
+        } else if (selectedValue === "গোয়ারিভাংঙ্গা থেকে হোমনা") {
+            setPublicPrice(15);
+            setTotalCost(15 + taxPrice);
             setNullError("");
         } else {
             setNullError("");
@@ -139,8 +139,45 @@ const UserStartService = () => {
 
                         <option value="">এখানে ক্লিক করুন </option>
 
-                        <option value="goaribhanga to homna">গোয়ারিভাংঙ্গা থেকে হোমনা</option>
-                        <option value="homna to batakandi">হোমনা থেকে বাতাকান্দি </option>
+                        <option value="হোমনা থেকে গোয়ারিভাংঙ্গা">হোমনা থেকে গোয়ারিভাংঙ্গা</option>
+                        <option value="গোয়ারিভাংঙ্গা থেকে হোমনা">গোয়ারিভাংঙ্গা থেকে হোমনা</option>
+                        <option value="হোমনা থেকে গৌরিপুর">হোমনা থেকে গৌরিপুর </option>
+                        <option value="হোমনা থেকে বাতাকান্দি">হোমনা থেকে বাতাকান্দি </option>
+                        <option value="হোমনা থেকে ঘারমোড়া">হোমনা থেকে ঘারমোড়া </option>
+                        <option value="হোমনা থেকে পঞ্চবটী">হোমনা থেকে পঞ্চবটী </option>
+                        <option value="হোমনা থেকে মিশিকারী">হোমনা থেকে মিশিকারী </option>
+                        <option value="হোমনা থেকে কাশিপুর">হোমনা থেকে কাশিপুর </option>
+                        <option value="হোমনা থেকে ওপারচর">হোমনা থেকে ওপারচর </option>
+                        <option value="হোমনা থেকে দুলালপুর">হোমনা থেকে দুলালপুর </option>
+                          
+                        <option value="হোমনা থেকে বাঞ্ছারামপুর">হোমনা থেকে বাঞ্ছারামপুর </option>
+                        <option value="হোমনা থেকে কাচারকান্দি">হোমনা থেকে কাচারকান্দি </option>
+                        <option value="হোমনা থেকে মঙ্গলকান্দি">হোমনা থেকে মঙ্গলকান্দি </option>
+                        <option value="হোমনা থেকে মিরাস">হোমনা থেকে মিরাস </option>
+                        <option value="হোমনা থেকে নিলুখিলালবাগ">হোমনা থেকে নিলুখিলালবাগ </option>
+                        <option value="হোমনা থেকে বাবরকান্দি">হোমনা থেকে বাবরকান্দি </option>
+                        <option value="হোমনা থেকে পায়রাবন্দ">হোমনা থেকে পায়রাবন্দ </option>
+                        <option value="হোমনা থেকে ববানীপুর">হোমনা থেকে ববানীপুর </option>
+                        <option value="হোমনা থেকে মক্তিনাগর/মাইনকাচড়
+                        ">হোমনা থেকে মক্তিনাগর/মাইনকাচড়
+                         </option>
+                        <option value="হোমনা থেকে মুড়গাচড়">হোমনা থেকে মুড়গাচড় </option>
+                        <option value="হোমনা থেকে সিনাইয়া">হোমনা থেকে সিনাইয়া </option>
+                        <option value="হোমনা থেকে কালমিনা">হোমনা থেকে কালমিনা </option>
+                        <option value="হোমনা থেকে কারাকান্দি">হোমনা থেকে কারাকান্দি </option>
+                        <option value="হোমনা থেকে আলিপুর">হোমনা থেকে আলিপুর </option>
+                        <option value="হোমনা থেকে দরিচড়">হোমনা থেকে দরিচড় </option>
+                        <option value="হোমনা থেকে বাগমারা">হোমনা থেকে বাগমারা </option>
+                        <option value="হোমনা থেকে চড়েগাঁও">হোমনা থেকে চড়েগাঁও </option>
+                        <option value="হোমনা থেকে লটিয়া">হোমনা থেকে লটিয়া </option>
+                        <option value="হোমনা থেকে শ্রীমুদ্দিঘাট">হোমনা থেকে শ্রীমুদ্দিঘাট </option>
+                        <option value="হোমনা থেকে শ্রীমুদ্দিমোড়">হোমনা থেকে শ্রীমুদ্দিমোড় </option>
+                        <option value="হোমনা থেকে কলাকান্দি">হোমনা থেকে কলাকান্দি </option>
+                        <option value="হোমনা থেকে কলাগাছিয়া">হোমনা থেকে কলাগাছিয়া </option>
+                        <option value="হোমনা থেকে আসাদপুর">হোমনা থেকে আসাদপুর </option>
+                        <option value="হোমনা থেকে চালানছাপুড়">হোমনা থেকে চালানছাপুড় </option>
+                        
+                        
                     </select>
                     {nullError && <span className="text-red-500">{nullError}</span>}
                 </div>
